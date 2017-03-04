@@ -9,15 +9,15 @@ public class RougeView {
 	private static JFrame frame;
 	private static ViewUpdate view;
 	
-	private void updateBoard(String[][] board){
+	public void updateBoard(String[][] board){
 		view.board=board;	
 	}
 	
-	private void updateStats(String stats){
+	public void updateStats(String stats){
 		view.stats=stats;
 	}
 	
-	private void updateNaration(String nat){
+	public void updateNaration(String nat){
 		view.naration=nat;
 	}
 
@@ -47,8 +47,8 @@ public class RougeView {
 	static class ViewUpdate extends JPanel{
 		
 		protected String[][] board= new String[0][0];
-		protected String naration="";
-		protected String stats= "";
+		protected String naration="This is where naration will go";
+		protected String stats= "This is where stats will go";
 		
 		
 		//Paints the Jframe with different narration, board, and stats
