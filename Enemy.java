@@ -10,8 +10,12 @@ public class Enemy extends Unit{
 	private int expGained;
 	private int dmg;
 	
-	public Enemy(int monsLevel) {
+	public Enemy(int monsLevel, int monsStr, int monsArm, int monsMaxHP, int monsExp) {
 		this.level = monsLevel;
+		this.strength = monsStr;
+		this.armor = monsArm;
+		this.maxHP = monsMaxHP;
+		this.expGained = monsExp;
 	}
 	
 	public void chase() {
@@ -30,10 +34,12 @@ public class Enemy extends Unit{
 		
 	}
 	
-	public void removeMonster() {
+	public int removeMonster() {
 		if(isDead()) {
 			
+			return this.expGained;
 		}
+		return 0;
 	}
 	
 	public void dropTreasure() {

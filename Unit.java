@@ -12,7 +12,6 @@ public class Unit {
 	
 	public Unit() {
 		// TODO constructor and stuff
-		this.level = 1;
 	}
 	
 	public void move(int[] direction) {

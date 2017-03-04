@@ -1,8 +1,9 @@
+import java.util.Random;
 
 public class Player extends Unit{
 	
-	private String curArmor;
-	private String curWeapon;
+	private armor curArmor;
+	private weapon curWeapon;
 	private int curRings;
 	private int gold;
 	private int maxHP;	//don't need this
@@ -15,10 +16,19 @@ public class Player extends Unit{
 	
 	public Player() {
 		// TODO Auto-generated constructor stub
+		this.level = 1;
+		this.strength = 0;
 	}
 
-	public int fight(direction dir, char monster, weapon weapon, boolean thrown) {
+	public int fight(int[] dir, char monster, weapon weapon, boolean thrown) {
 		// TODO
+		int dmg = 4;
+		if(curWeapon!=null){
+			dmg += curWeapon.damageIncrease();
+		}
+		Random rand = new Random();
+		int r = rand.nextInt(dmg+1);
+		return r;
 	}
 	
 	public void checkLevelUp() {
