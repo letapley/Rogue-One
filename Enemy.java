@@ -31,7 +31,7 @@ public class Enemy extends Unit{
 	}
 	
 	public void removeMonster() {
-		if(hp <= 0) {
+		if(isDead()) {
 			
 		}
 	}
