@@ -47,6 +47,7 @@ public class Player extends Unit{
 		}
 	}
 	
+	//not implemented in prototype?
 	public void checkHunger() {
 		
 	}

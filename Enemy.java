@@ -41,18 +41,17 @@ public class Enemy extends Unit{
 	public int removeMonster() {
 		if(isDead()) {
 			
-			return dropTreasure();
 			return this.expGained;
 		}
 		return 0;
 	}
 	
-	//chance of monster to drop money
 	public int dropTreasure() {
 		Random rand = 	new Random();
 		int r = rand.nextInt(101);
 		if(r == treasureChance) {
 			return gold;
 		}
+		return 0;
 	}
 }
