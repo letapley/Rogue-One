@@ -17,7 +17,14 @@ public class Player extends Unit{
 	public Player() {
 		// TODO Auto-generated constructor stub
 		this.level = 1;
-		this.strength = 0;
+		this.strength = 10;
+		this.armor = 2;
+		this.gold = 0;
+		this.exp = 0;
+		this.maxExp = 10;
+		this.hunger = 5;
+		this.maxHP = this.hp = 16;
+		this.name = "@";
 	}
 
 	public int fight(int[] dir, char monster, weapon weapon, boolean thrown) {
