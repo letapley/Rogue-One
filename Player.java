@@ -29,7 +29,7 @@ public class Player extends Unit{
 
 	public int fight(int[] dir, char monster, weapon weapon, boolean thrown) {
 		// TODO
-		int dmg = 4;
+		int dmg = this.strength;
 		if(curWeapon!=null){
 			dmg += curWeapon.damageIncrease();
 		}
