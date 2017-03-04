@@ -9,13 +9,15 @@ public class Enemy extends Unit{
 	private int treasureChance;
 	private int expGained;
 	private int dmg;
+	private int gold;
 	
-	public Enemy(int monsLevel, int monsStr, int monsArm, int monsMaxHP, int monsExp) {
+	public Enemy(int monsLevel, int monsStr, int monsArm, int monsMaxHP, int monsExp, int gold) {
 		this.level = monsLevel;
 		this.strength = monsStr;
 		this.armor = monsArm;
 		this.maxHP = monsMaxHP;
 		this.expGained = monsExp;
+		this.gold = gold;
 	}
 	
 	public void chase() {
@@ -31,22 +33,26 @@ public class Enemy extends Unit{
 	}
 	
 	public int attackPlayer() {
-		
+		Random rand = new Random();
+		int r = rand.nextInt(this.strength+1);
+		return r;
 	}
 	
 	public int removeMonster() {
 		if(isDead()) {
 			
+			return dropTreasure();
 			return this.expGained;
 		}
 		return 0;
 	}
 	
-	public void dropTreasure() {
+	//chance of monster to drop money
+	public int dropTreasure() {
 		Random rand = 	new Random();
 		int r = rand.nextInt(101);
 		if(r == treasureChance) {
-			
+			return gold;
 		}
 	}
 }
