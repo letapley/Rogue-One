@@ -4,10 +4,25 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-public class Controller implements KeyListener {
-		
+public class Controller extends JFrame implements KeyListener {
+	
+    JLabel label;
+
+    public Controller(String s) {
+        super(s);
+        JPanel p = new JPanel();
+        label = new JLabel("Key Listener!");
+        p.add(label);
+        add(p);
+        addKeyListener(this);
+        setSize(200, 100);
+        setVisible(true);
+
+    }
+	
 	@Override
-	public void keyReleased(KeyEvent e) {		
+	public void keyReleased(KeyEvent e) {
+		
 	}
 	
 	@Override
@@ -43,4 +58,7 @@ public class Controller implements KeyListener {
 	public void keyTyped(KeyEvent e) {
 	}
 	
+	public static void main(String[] args) {
+		new Controller("hello world!");
+	}
 }
